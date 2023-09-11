@@ -14,7 +14,10 @@ const routes: Routes = [
   },
   {
     path: 'courses', component: CourseListComponent
-  }
+  },
+  {
+    path: 'add-course', component: AddCourseComponent
+  },
 ];
 
 @NgModule({
