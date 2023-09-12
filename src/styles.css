@@ -4,6 +4,6 @@
 
 @layer base {
     .btn-primary {
-        @apply bg-indigo-600 px-3.5 py-2.5 font-semibold text-white shadow-sm hover:bg-indigo-500
+        @apply bg-[#2d2f31] px-3.5 py-2.5 font-semibold text-white shadow-sm hover:bg-gray-800;
     }
 }
