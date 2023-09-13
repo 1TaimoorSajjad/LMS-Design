@@ -6,6 +6,7 @@ import { AddCourseComponent } from './components/courses/add-course/add-course.c
 import { CourseListComponent } from './components/courses/course-list/course-list.component';
 import { InstructorsListComponent } from './components/instructors/instructors-list/instructors-list.component';
 import { AddInstructorsComponent } from './components/instructors/add-instructors/add-instructors.component';
+import { KpiComponent } from './components/kpi/kpi.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,9 @@ const routes: Routes = [
   },
   {
     path: 'add-instructor', component: AddInstructorsComponent
+  },
+  {
+    path: 'kpi', component: KpiComponent
   }
 ];
 

@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CourseListComponent } from './components/courses/course-list/course-list.component';
 import { InstructorsListComponent } from './components/instructors/instructors-list/instructors-list.component';
 import { AddInstructorsComponent } from './components/instructors/add-instructors/add-instructors.component';
+import { KpiComponent } from './components/kpi/kpi.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddInstructorsComponent } from './components/instructors/add-instructor
     CourseListComponent,
     InstructorsListComponent,
     AddInstructorsComponent,
+    KpiComponent,
   ],
   imports: [
     BrowserModule,
