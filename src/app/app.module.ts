@@ -9,6 +9,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { AddCourseComponent } from './components/courses/add-course/add-course.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CourseListComponent } from './components/courses/course-list/course-list.component';
+import { InstructorsListComponent } from './components/instructors/instructors-list/instructors-list.component';
+import { AddInstructorsComponent } from './components/instructors/add-instructors/add-instructors.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { CourseListComponent } from './components/courses/course-list/course-lis
     AddCourseComponent,
     HeaderComponent,
     CourseListComponent,
+    InstructorsListComponent,
+    AddInstructorsComponent,
   ],
   imports: [
     BrowserModule,
