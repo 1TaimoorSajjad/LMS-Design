@@ -5,10 +5,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddCourseComponent } from './components/courses/add-course/add-course.component';
 import { CourseListComponent } from './components/courses/course-list/course-list.component';
 import { InstructorsListComponent } from './components/instructors/instructors-list/instructors-list.component';
-import { AddInstructorsComponent } from './components/instructors/add-instructors/add-instructors.component';
 import { KpiComponent } from './components/kpi/kpi.component';
+import { AddInstructorsComponent } from './components/instructors/add-instructors/add-instructors.component';
 import { CategoriesListComponent } from './components/categories/categories-list/categories-list.component';
 import { AddCategoriesComponent } from './components/categories/add-categories/add-categories.component';
+import { SubCategoriesListComponent } from './components/sub-categories/sub-categories-list/sub-categories-list.component';
+import { AddSubCategoriesComponent } from './components/sub-categories/add-sub-categories/add-sub-categories.component';
 
 const routes: Routes = [
   {
@@ -37,7 +39,14 @@ const routes: Routes = [
   },
   {
     path: 'add-category', component: AddCategoriesComponent
-  }
+  },
+  {
+    path: 'sub-categories', component: SubCategoriesListComponent
+  },
+  {
+    path: 'add-sub-category', component: AddSubCategoriesComponent
+  },
+
 ];
 
 @NgModule({

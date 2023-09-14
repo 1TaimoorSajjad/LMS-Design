@@ -14,6 +14,8 @@ import { AddInstructorsComponent } from './components/instructors/add-instructor
 import { KpiComponent } from './components/kpi/kpi.component';
 import { CategoriesListComponent } from './components/categories/categories-list/categories-list.component';
 import { AddCategoriesComponent } from './components/categories/add-categories/add-categories.component';
+import { SubCategoriesListComponent } from './components/sub-categories/sub-categories-list/sub-categories-list.component';
+import { AddSubCategoriesComponent } from './components/sub-categories/add-sub-categories/add-sub-categories.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { AddCategoriesComponent } from './components/categories/add-categories/a
     KpiComponent,
     CategoriesListComponent,
     AddCategoriesComponent,
+    SubCategoriesListComponent,
+    AddSubCategoriesComponent,
   ],
   imports: [
     BrowserModule,
