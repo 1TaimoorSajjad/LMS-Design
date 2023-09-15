@@ -11,6 +11,7 @@ import { CategoriesListComponent } from './components/categories/categories-list
 import { AddCategoriesComponent } from './components/categories/add-categories/add-categories.component';
 import { SubCategoriesListComponent } from './components/sub-categories/sub-categories-list/sub-categories-list.component';
 import { AddSubCategoriesComponent } from './components/sub-categories/add-sub-categories/add-sub-categories.component';
+import { DocumentsComponent } from './components/instructors/documents/documents.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,9 @@ const routes: Routes = [
   },
   {
     path: 'add-instructor', component: AddInstructorsComponent
+  },
+  {
+    path: 'instructor/documents', component: DocumentsComponent
   },
   {
     path: 'kpi', component: KpiComponent
