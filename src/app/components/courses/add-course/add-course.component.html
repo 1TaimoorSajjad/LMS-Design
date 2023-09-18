@@ -1,4 +1,4 @@
-<div class="flex justify-center items-center">
+<div class="flex justify-center items-center max-w-7xl mx-auto">
     <div>
         <div class="font-serif text-4xl mt-12 hidden">
             First, let's find out what type of course you're making.
@@ -18,7 +18,7 @@
             </span>
         </div>
         <!-- First three screens -->
-        <div class="max-w-4xl mx-auto mt-11 ">
+        <div class="max-w-7xl mx-auto mt-11 ">
             <div class="grid sm:grid-cols-2 gap-8 hidden">
                 <div class="p-20 shadow-sm custom-outline ">
                     <div class="flex justify-center">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid sm:grid-cols-1 gap-8  hidden ">
+            <div class="grid sm:grid-cols-1 gap-8 hidden ">
                 <div>
                     <label id="listbox-label" class="block text-sm font-medium leading-6 text-gray-900">Assigned
                         to</label>
@@ -288,7 +288,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid sm:grid-cols-6 gap-8 ">
+            <div class="grid sm:grid-cols-6 gap-8 hidden">
                 <div class="col-span-1">
                     <label class="font-bold">Plan your Course</label>
                     <div class="space-y-6">
@@ -403,6 +403,156 @@
                         <button class="btn-primary p-2">+ Section</button>
                     </div>
                 </div>
+            </div>
+            <div class="grid sm:grid-cols-6 gap-8 ">
+                <div class="col-span-1">
+                    <label class="font-bold">Plan your Course</label>
+                    <div class="space-y-6">
+                        <div class="relative flex items-start">
+                            <div class="flex h-6 items-center">
+                                <input id="comments" aria-describedby="comments-description" name="comments"
+                                    type="checkbox"
+                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            </div>
+                            <div class="ml-3 text-sm leading-6">
+                                <label for="comments" class="font-medium text-gray-900">Comments</label>
+
+                            </div>
+                        </div>
+                        <div class="relative flex items-start">
+                            <div class="flex h-6 items-center">
+                                <input id="candidates" aria-describedby="candidates-description" name="candidates"
+                                    type="checkbox"
+                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            </div>
+                            <div class="ml-3 text-sm leading-6">
+                                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
+
+                            </div>
+                        </div>
+                        <div class="relative flex items-start">
+                            <div class="flex h-6 items-center">
+                                <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox"
+                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            </div>
+                            <div class="ml-3 text-sm leading-6">
+                                <label for="offers" class="font-medium text-gray-900">Offers</label>
+
+                            </div>
+                        </div>
+                    </div>
+                    <label class="font-bold mt-4">Create your content
+                    </label>
+                    <div class="space-y-6">
+                        <div class="relative flex items-start">
+                            <div class="flex h-6 items-center">
+                                <input id="comments" aria-describedby="comments-description" name="comments"
+                                    type="checkbox"
+                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            </div>
+                            <div class="ml-3 text-sm leading-6">
+                                <label for="comments" class="font-medium text-gray-900">Comments</label>
+
+                            </div>
+                        </div>
+                        <div class="relative flex items-start">
+                            <div class="flex h-6 items-center">
+                                <input id="candidates" aria-describedby="candidates-description" name="candidates"
+                                    type="checkbox"
+                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            </div>
+                            <div class="ml-3 text-sm leading-6">
+                                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
+
+                            </div>
+                        </div>
+                        <div class="relative flex items-start">
+                            <div class="flex h-6 items-center">
+                                <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox"
+                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                            </div>
+                            <div class="ml-3 text-sm leading-6">
+                                <label for="offers" class="font-medium text-gray-900">Offers</label>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-5 p-10 shadow-lg rounded-md ">
+                    <div class="flex justify-between">
+                        <div class="text-4xl font-serif">
+                            Course landing page
+                        </div>
+                    </div>
+                    <div class="font-normal mt-4">
+                        Your course landing page is crucial to your success on Udemy. If it’s done right, it can also
+                        help you gain visibility in search engines like Google. As you complete this section, think
+                        about creating a compelling Course Landing Page that demonstrates why someone would want to
+                        enroll in your course. Learn more about creating your course landing page and course title
+                        standards.
+                    </div>
+                    <div class="mt-2">
+                        <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course title</label>
+                        <div class="mt-2">
+                            <input type="email" name="email" id="email"
+                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course subtitle
+                        </label>
+                        <div class="mt-2">
+                            <input type="email" name="email" id="email"
+                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course description
+                        </label>
+                        <div class="mt-2">
+                            <input type="email" name="email" id="email"
+                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-4 gap-4">
+                        <div class="col-span-1">
+
+                            <label for="email" class="block text-sm font-bold leading-6 mt-2 text-gray-900">Basic
+                                Info</label>
+                            <div class="">
+                                <input type="email" name="email" id="email"
+                                    class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    placeholder="Language">
+                            </div>
+                        </div>
+                        <div class="col-span-1 mt-8">
+                            <input type="email" name="email" id="email"
+                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                placeholder="Level">
+                        </div>
+                        <div class="col-span-1 mt-8">
+                            <input type="email" name="email" id="email"
+                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                placeholder="Category">
+                        </div>
+                        <div class="col-span-1 mt-8">
+                            <input type="email" name="email" id="email"
+                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                placeholder="Sub-Category">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+
+                        <label class="block mb-2 text-sm font-bold text-gray-900 " for="file_input">Upload
+                            Cover Photo</label>
+                        <input class="btn-primary" id="file_input" type="file">
+
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="btn-primary absolute right-8 bottom-8 ">
