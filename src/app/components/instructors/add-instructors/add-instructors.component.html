@@ -1,94 +1,90 @@
-<form class="max-w-6xl flex mx-auto shadow-lg py-4 px-4">
-    <div class="space-y-12">
+<form class="max-w-2xl  mx-auto shadow-lg py-4 px-4">
+    <div class="space-y-12  mx-auto max-w-xl">
         <div class="border-b border-gray-900/10 pb-12">
             <h2 class="text-2xl font-semibold leading-7 text-gray-900">Add Instructor</h2>
             <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be careful
                 what you share.</p>
         </div>
 
-        <div class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
-            <div>
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
+
+
+
+        <div class="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
+            <div class="sm:col-span-3">
+                <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
+                <div class="mt-2">
+                    <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                        class="input-primary w-full">
+                </div>
             </div>
 
-            <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
-                <div class="sm:col-span-3">
-                    <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
-                    <div class="mt-2">
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                            class="input-primary">
-                    </div>
+            <div class="sm:col-span-3">
+                <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
+                <div class="mt-2">
+                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="input-primary">
                 </div>
+            </div>
 
-                <div class="sm:col-span-3">
-                    <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
-                    <div class="mt-2">
-                        <input type="text" name="last-name" id="last-name" autocomplete="family-name"
-                            class="input-primary">
-                    </div>
+            <div class="sm:col-span-4">
+                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                <div class="mt-2">
+                    <input id="email" name="email" type="email" autocomplete="email" class="input-primary">
                 </div>
+            </div>
 
-                <div class="sm:col-span-4">
-                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-                    <div class="mt-2">
-                        <input id="email" name="email" type="email" autocomplete="email" class="input-primary">
-                    </div>
+            <div class="sm:col-span-3">
+                <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
+                <div class="mt-2">
+                    <select id="country" name="country" autocomplete="country-name" class="input-primary">
+                        <option>United States</option>
+                        <option>Canada</option>
+                        <option>Mexico</option>
+                    </select>
                 </div>
+            </div>
 
-                <div class="sm:col-span-3">
-                    <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
-                    <div class="mt-2">
-                        <select id="country" name="country" autocomplete="country-name" class="input-primary">
-                            <option>United States</option>
-                            <option>Canada</option>
-                            <option>Mexico</option>
-                        </select>
-                    </div>
+            <div class="col-span-full">
+                <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street
+                    address</label>
+                <div class="mt-2">
+                    <input type="text" name="street-address" id="street-address" autocomplete="street-address"
+                        class="input-primary">
                 </div>
+            </div>
 
-                <div class="col-span-full">
-                    <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">Street
-                        address</label>
-                    <div class="mt-2">
-                        <input type="text" name="street-address" id="street-address" autocomplete="street-address"
-                            class="input-primary">
-                    </div>
+            <div class="sm:col-span-3">
+                <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
+                <div class="mt-2">
+                    <select id="country" name="country" autocomplete="country-name" class="input-primary">
+                        <option>--Select Category--</option>
+                        <option>Fire Fighter</option>
+                        <option>Paramedic</option>
+                        <option>NEMT</option>
+                    </select>
                 </div>
-
-                <div class="sm:col-span-3">
-                    <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
-                    <div class="mt-2">
-                        <select id="country" name="country" autocomplete="country-name" class="input-primary">
-                            <option>--Select Category--</option>
-                            <option>Fire Fighter</option>
-                            <option>Paramedic</option>
-                            <option>NEMT</option>
-                        </select>
+            </div>
+            <div class="sm:col-span-4">
+                <div class="flex items-center space-x-6 bg-white p-3 rounded-md">
+                    <div class="shrink-0">
+                        <img class="h-16 w-16 object-cover rounded-full"
+                            src="https://ik.imagekit.io/ktdjfymfk/pexels-pixabay-164595__2__tD_vGRYs2.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654163121780"
+                            alt="s" />
                     </div>
-                </div>
-                <div class="sm:col-span-4">
-                    <div class="flex items-center space-x-6 bg-white p-3 rounded-md">
-                        <div class="shrink-0">
-                            <img class="h-16 w-16 object-cover rounded-full"
-                                src="https://ik.imagekit.io/ktdjfymfk/pexels-pixabay-164595__2__tD_vGRYs2.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654163121780"
-                                alt="s" />
-                        </div>
-                        <label class="block">
-                            <span class="sr-only">Choose profile photo</span>
-                            <input type="file" class="block w-full text-sm text-slate-500
+                    <label class="block">
+                        <span class="sr-only">Choose profile photo</span>
+                        <input type="file" class="block w-full text-sm text-slate-500
                        file:mr-4 file:py-2 file:px-4
                        file:rounded-full file:border-0
                        file:text-sm file:font-semibold
                        file:bg-violet-50 file:text-violet-700
                        hover:file:bg-violet-100
                      " />
-                        </label>
-                    </div>
-
+                    </label>
                 </div>
+
             </div>
         </div>
+
     </div>
 
     <div class="mt-6 flex items-end justify-end gap-x-6">
