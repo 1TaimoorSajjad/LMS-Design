@@ -1,69 +1,60 @@
-<form class="max-w-6xl flex mx-auto shadow-lg py-4 px-4">
-    <div class="space-y-12">
+<form class="max-w-2xl  mx-auto shadow-lg py-4 px-4 mt-5">
+    <div class="space-y-12 mx-auto max-w-xl">
         <div class="border-b border-gray-900/10 pb-12">
             <h2 class="text-2xl font-semibold leading-7 text-gray-900">Add Sub-Category</h2>
             <p class="mt-1 text-sm leading-6 text-gray-600">This information will be displayed publicly so be careful
                 what you share.</p>
         </div>
-
-        <div class="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
-            <div>
-                <h2 class="text-base font-semibold leading-7 text-gray-900">Sub-Category Information</h2>
-
+        <div class="grid  grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
+            <div class="sm:col-span-3">
+                <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
+                <div class="mt-2">
+                    <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
             </div>
 
-            <div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
-                <div class="sm:col-span-3">
-                    <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Title</label>
-                    <div class="mt-2">
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
-
-                <div class="sm:col-span-4">
-                    <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
-                    <div class="mt-2">
-                        <textarea name="" class=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm
+            <div class="sm:col-span-4">
+                <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+                <div class="mt-2">
+                    <textarea name="" class=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm
                             ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset
                             focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
-                    </div>
                 </div>
-                <div class="sm:col-span-4">
-                    <label for="location" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
-                    <select id="location" name="location"
-                        class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                        <option>--Select Category--</option>
-                        <option>NEMT</option>
-                        <option>Fire Fighter</option>
-                        <option>Para medic</option>
-                    </select>
-                </div>
+            </div>
+            <div class="sm:col-span-4">
+                <label for="location" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
+                <select id="location" name="location"
+                    class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <option>--Select Category--</option>
+                    <option>NEMT</option>
+                    <option>Fire Fighter</option>
+                    <option>Para medic</option>
+                </select>
+            </div>
 
-                <div class="sm:col-span-4">
-                    <div class="flex items-center space-x-6 bg-white p-3 rounded-md">
-                        <div class="shrink-0">
-                            <img class="h-16 w-16 object-cover rounded-full"
-                                src="https://ik.imagekit.io/ktdjfymfk/pexels-pixabay-164595__2__tD_vGRYs2.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654163121780"
-                                alt="s" />
-                        </div>
-                        <label class="block">
-                            <span class="sr-only">Choose profile photo</span>
-                            <input type="file" class="block w-full text-sm text-slate-500
+            <div class="sm:col-span-4">
+                <div class="flex items-center space-x-6 bg-white p-3 rounded-md">
+                    <div class="shrink-0">
+                        <img class="h-16 w-16 object-cover rounded-full"
+                            src="https://ik.imagekit.io/ktdjfymfk/pexels-pixabay-164595__2__tD_vGRYs2.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1654163121780"
+                            alt="s" />
+                    </div>
+                    <label class="block">
+                        <span class="sr-only">Choose profile photo</span>
+                        <input type="file" class="block w-full text-sm text-slate-500
                        file:mr-4 file:py-2 file:px-4
                        file:rounded-full file:border-0
                        file:text-sm file:font-semibold
                        file:bg-violet-50 file:text-violet-700
                        hover:file:bg-violet-100" />
-                        </label>
-                    </div>
-
+                    </label>
                 </div>
 
             </div>
+
         </div>
     </div>
-
     <div class="mt-6 flex items-end justify-end gap-x-6">
         <button type="submit" class="btn-primary">Add</button>
     </div>
