@@ -17,6 +17,9 @@ import { AddCategoriesComponent } from './components/categories/add-categories/a
 import { SubCategoriesListComponent } from './components/sub-categories/sub-categories-list/sub-categories-list.component';
 import { AddSubCategoriesComponent } from './components/sub-categories/add-sub-categories/add-sub-categories.component';
 import { DocumentsComponent } from './components/instructors/documents/documents.component';
+import { Course1Component } from './components/courses/course1/course1.component';
+import { Course2Component } from './components/courses/course2/course2.component';
+import { Course3Component } from './components/courses/course3/course3.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { DocumentsComponent } from './components/instructors/documents/documents
     SubCategoriesListComponent,
     AddSubCategoriesComponent,
     DocumentsComponent,
+    Course1Component,
+    Course2Component,
+    Course3Component,
   ],
   imports: [
     BrowserModule,
