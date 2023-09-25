@@ -19,15 +19,19 @@ import { Course4Component } from './components/courses/course4/course4.component
 import { Course5Component } from './components/courses/course5/course5.component';
 import { Course6Component } from './components/courses/course6/course6.component';
 
+
 const routes: Routes = [
-  {
-    path: '', component: DashboardComponent
-  },
+  // {
+  //   path: '', component: DashboardComponent
+  // },
   {
     path: 'signin', component: SigninComponent
   },
   {
     path: 'courses', component: CourseListComponent
+  },
+  {
+    path: '', component: CourseListComponent
   },
   // {
   //   path: 'add-course/screen1', component: AddCourseComponent
