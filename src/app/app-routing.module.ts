@@ -15,6 +15,9 @@ import { DocumentsComponent } from './components/instructors/documents/documents
 import { Course1Component } from './components/courses/course1/course1.component';
 import { Course2Component } from './components/courses/course2/course2.component';
 import { Course3Component } from './components/courses/course3/course3.component';
+import { Course4Component } from './components/courses/course4/course4.component';
+import { Course5Component } from './components/courses/course5/course5.component';
+import { Course6Component } from './components/courses/course6/course6.component';
 
 const routes: Routes = [
   {
@@ -40,6 +43,15 @@ const routes: Routes = [
   },
   {
     path: 'add-course/3', component: Course3Component
+  },
+  {
+    path: 'add-course/4', component: Course4Component
+  },
+  {
+    path: 'add-course/5', component: Course5Component
+  },
+  {
+    path: 'add-course/6', component: Course6Component
   },
   {
     path: 'instructors', component: InstructorsListComponent
