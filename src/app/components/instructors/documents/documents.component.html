@@ -6,7 +6,7 @@
         <div class="grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-6 md:col-span-3">
             <div class="sm:col-span-3">
                 <div class="mt-2">
-                    <button type="button"
+                    <button type="button" (click)="addCertification()"
                         class="relative block w-64 rounded-lg border-2 border-dashed border-gray-300 py-1.5 text-center hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none"
                             viewBox="0 0 48 48" aria-hidden="true">
@@ -18,7 +18,7 @@
 
                 </div>
             </div>
-            <div class="sm:col-span-5 pt-2 ">
+            <div class="sm:col-span-5 pt-2 " *ngIf="isNewCertification === true">
                 <div
                     class="relative transform overflow-hidden rounded-lg bg-white px-6 pb-4 pt-2 text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6">
                     <div class="border-b border-gray-900/10 pb-12">

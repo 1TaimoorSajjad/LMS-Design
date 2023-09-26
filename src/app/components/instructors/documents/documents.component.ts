@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./documents.component.css']
 })
 export class DocumentsComponent implements OnInit {
-
+  isNewCertification = false
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  addCertification() {
+    this.isNewCertification = true
+  }
 }

@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course5.component.css']
 })
 export class Course5Component implements OnInit {
-
+  isNewSection = false
+  isCurriculumItem = false
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addSection() {
+    this.isNewSection = true
+  }
+  addCurriculumItem() {
+    this.isCurriculumItem = true
   }
 
 }
