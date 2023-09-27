@@ -119,18 +119,25 @@
                                     <div class="border border-dashed border-black m-6 flex space-x-10">
                                         <button class="font-medium p-2" (click)="addAssignment()">
                                             +Assignment
-                                            <div class="border border-dashed border-black m-6 flex "
+                                            <div class=" border border-dashed border-black m-6 flex justify-center"
                                                 *ngIf="isAssignment === true">
-                                                <input type="text" class="w-full shadow-md ring-1 ring-black">
+                                                <div class="font-medium p-2 ">
+                                                    Lecture 1: <span class="font-normal">Introduction</span>
+                                                </div>
+
+                                                <button class="btn-primary ">
+                                                    Add Lecture
+                                                </button>
+
                                             </div>
                                         </button>
-                                        <div class="font-medium p-2">
+                                        <div class="font-medium p-2" *ngIf="isHidden">
                                             +Quiz
                                         </div>
-                                        <div class="font-medium p-2">
+                                        <div class="font-medium p-2" *ngIf="isHidden">
                                             +Lecture
                                         </div>
-                                        <div class="font-medium p-2">
+                                        <div class="font-medium p-2" *ngIf="isHidden">
                                             +Exercise
                                         </div>
                                     </div>
