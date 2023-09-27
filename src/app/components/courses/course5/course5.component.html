@@ -97,8 +97,7 @@
                             exercises and assignments).
                         </div>
                         <div class="font-normal">
-                            Start putting together your course by creating sections, lectures and practice activities
-                            (quizzes, coding exercises and assignments). Use your course outline to structure your
+                            Use your course outline to structure your
                             content
                             and label your sections and lectures clearly. If you’re intending to offer your course for
                             free,
@@ -117,9 +116,22 @@
                                     </div>
                                 </div>
                                 <div *ngIf="isCurriculumItem === true">
-                                    <div class="ring-1 ring-black m-6 flex justify-between">
+                                    <div class="border border-dashed border-black m-6 flex space-x-10">
+                                        <button class="font-medium p-2" (click)="addAssignment()">
+                                            +Assignment
+                                            <div class="border border-dashed border-black m-6 flex "
+                                                *ngIf="isAssignment === true">
+                                                <input type="text" class="w-full shadow-md ring-1 ring-black">
+                                            </div>
+                                        </button>
                                         <div class="font-medium p-2">
-                                            Lecture 1: <span class="font-normal">Introduction</span>
+                                            +Quiz
+                                        </div>
+                                        <div class="font-medium p-2">
+                                            +Lecture
+                                        </div>
+                                        <div class="font-medium p-2">
+                                            +Exercise
                                         </div>
                                     </div>
                                 </div>

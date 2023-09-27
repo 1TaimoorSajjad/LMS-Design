@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class Course5Component implements OnInit {
   isNewSection = false
   isCurriculumItem = false
+  isAssignment = false
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +19,9 @@ export class Course5Component implements OnInit {
   }
   addCurriculumItem() {
     this.isCurriculumItem = true
+  }
+  addAssignment() {
+    this.isAssignment = true
   }
 
 }
