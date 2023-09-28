@@ -84,6 +84,7 @@
         </div>
     </div>
     <div class="mt-6 flex items-end justify-end gap-x-6">
-        <button type="button" class="btn-primary" (click)="onSubmit()" routerLink="/instructors">Add</button>
+        <button type="button" class="btn-primary" (click)="onSubmit()" routerLink="/instructors">{{documentId ? 'Edit' :
+            'Add'}}</button>
     </div>
 </form>

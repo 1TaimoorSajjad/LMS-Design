@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, doc, setDoc, getDoc } from '@angular/fire/firestore';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -24,22 +24,35 @@ export class AddInstructorsComponent implements OnInit {
       type: ['']
     });
     this.collectionRef = collection(this.firestore, 'instructors');
-    this.router.params.subscribe((params) => {
-      const userId = params['id'];
-      if (userId) {
-        this.documentId = userId;
-
-      }
-    });
-
+    this.getInstructorId()
   }
 
   async onSubmit() {
     try {
       const payload = this.instructorForm.value;
-      const docRef = await addDoc(this.collectionRef, payload);
+      if (this.documentId) {
+        const instructorDocRef = doc(this.firestore, 'instructors', this.documentId);
+        await setDoc(instructorDocRef, payload);
+      } else {
+        await addDoc(this.collectionRef, payload);
+      }
     } catch (error) {
-      console.error('Error adding document: ', error);
+      console.error('Error adding/updating document: ', error);
     }
+  }
+
+  getInstructorId() {
+    this.router.params.subscribe(async (params) => {
+      const userId = params['id'];
+      if (userId) {
+        this.documentId = userId;
+        const instructorDocRef = doc(this.firestore, 'instructors', userId);
+        const instructorDocSnapshot = await getDoc(instructorDocRef);
+        if (instructorDocSnapshot.exists()) {
+          const instructorData = instructorDocSnapshot.data();
+          this.instructorForm.patchValue(instructorData);
+        }
+      }
+    });
   }
 }
