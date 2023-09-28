@@ -10,6 +10,8 @@ export class Course5Component implements OnInit {
   isCurriculumItem = false
   isAssignment = false
   isHidden = true
+  isHiddenItem = false
+  isHiddenAssignment = false
   constructor() { }
 
   ngOnInit(): void {
@@ -20,10 +22,12 @@ export class Course5Component implements OnInit {
   }
   addCurriculumItem() {
     this.isCurriculumItem = true
+    this.isHiddenItem = true
   }
   addAssignment() {
     this.isAssignment = true
     this.isHidden = false
+    this.isHiddenAssignment = true
   }
 
 }
