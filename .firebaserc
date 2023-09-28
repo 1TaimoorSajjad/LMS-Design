@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "lms-arizona"
+  },
+  "targets": {
+    "lms-arizona": {
+      "hosting": {
+        "lms-design": [
+          "lms-arizona"
+        ]
+      }
+    }
+  }
+}
