@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Firestore, collection, addDoc } from '@angular/fire/firestore';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-add-instructors',
@@ -8,9 +9,10 @@ import { Firestore, collection, addDoc } from '@angular/fire/firestore';
   styleUrls: ['./add-instructors.component.css']
 })
 export class AddInstructorsComponent implements OnInit {
-  constructor(private fb: FormBuilder, private firestore: Firestore) { }
+  constructor(private fb: FormBuilder, private firestore: Firestore, private router: ActivatedRoute) { }
   collectionRef: any
   instructorForm!: FormGroup;
+  documentId: any
 
   ngOnInit(): void {
     this.instructorForm = this.fb.group({
@@ -22,6 +24,13 @@ export class AddInstructorsComponent implements OnInit {
       type: ['']
     });
     this.collectionRef = collection(this.firestore, 'instructors');
+    this.router.params.subscribe((params) => {
+      const userId = params['id'];
+      if (userId) {
+        this.documentId = userId;
+
+      }
+    });
 
   }
 

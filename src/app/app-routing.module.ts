@@ -64,6 +64,9 @@ const routes: Routes = [
     path: 'add-instructor', component: AddInstructorsComponent
   },
   {
+    path: 'instructors/edit/:id', component: AddInstructorsComponent
+  },
+  {
     path: 'instructor/documents', component: DocumentsComponent
   },
   {

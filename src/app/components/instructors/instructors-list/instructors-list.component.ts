@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { collection, getDocs, Firestore } from '@angular/fire/firestore';
-import { query } from 'firebase/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-instructors-list',
@@ -10,7 +10,7 @@ import { query } from 'firebase/firestore';
 export class InstructorsListComponent implements OnInit {
   collectionRef: any;
   instructors: any[] = []
-  constructor(private firestore: Firestore) { }
+  constructor(private firestore: Firestore, private router: Router) { }
 
 
   ngOnInit() {
@@ -22,9 +22,14 @@ export class InstructorsListComponent implements OnInit {
   async getInstructors() {
     const querySnapshot = await getDocs(this.collectionRef)
     querySnapshot.forEach((doc) => {
-      this.instructors.push(doc.data())
+      // Include the document ID along with the data
+      this.instructors.push({ id: doc.id, data: doc.data() });
     })
     console.log("instructors", this.instructors)
   }
 
+  edit(instructorId: string) {
+    this.router.navigate(['/instructors/edit/' + instructorId])
+
+  }
 }
