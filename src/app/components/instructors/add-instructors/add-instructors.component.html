@@ -1,4 +1,4 @@
-<form class="max-w-7xl mx-auto shadow-lg py-4 px-4 mt-5">
+<form class="max-w-7xl mx-auto shadow-lg py-4 px-4 mt-5" [formGroup]="instructorForm">
     <div class=" space-y-6 max-w-6xl">
         <div class="border-b border-gray-900/10 pb-12">
             <h2 class="text-2xl font-semibold  text-gray-900">Add Instructor</h2>
@@ -8,31 +8,34 @@
                 <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
                 <div class="mt-2">
                     <input type="text" name="first-name" id="first-name" autocomplete="given-name"
-                        class="input-primary w-full">
+                        class="input-primary w-full" formControlName="firstName">
                 </div>
             </div>
 
             <div class="sm:col-span-3">
                 <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
                 <div class="mt-2">
-                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="input-primary">
+                    <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="input-primary"
+                        formControlName="lastName">
                 </div>
             </div>
 
             <div class="sm:col-span-4">
                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                 <div class="mt-2">
-                    <input id="email" name="email" type="email" autocomplete="email" class="input-primary">
+                    <input id="email" name="email" type="email" autocomplete="email" class="input-primary"
+                        formControlName="email">
                 </div>
             </div>
 
             <div class="sm:col-span-3">
-                <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
+                <label for="country" class="block text-sm font-medium leading-6 text-gray-900">State</label>
                 <div class="mt-2">
-                    <select id="country" name="country" autocomplete="country-name" class="input-primary">
-                        <option>United States</option>
-                        <option>Canada</option>
-                        <option>Mexico</option>
+                    <select id="country" name="country" autocomplete="country-name" class="input-primary"
+                        formControlName="state">
+                        <option>--Select State--</option>
+                        <option>Arizona</option>
+                        <option>Kansas</option>
                     </select>
                 </div>
             </div>
@@ -42,14 +45,15 @@
                     address</label>
                 <div class="mt-2">
                     <input type="text" name="street-address" id="street-address" autocomplete="street-address"
-                        class="input-primary">
+                        class="input-primary" formControlName="address">
                 </div>
             </div>
 
             <div class="sm:col-span-3">
                 <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
                 <div class="mt-2">
-                    <select id="country" name="country" autocomplete="country-name" class="input-primary">
+                    <select id="country" name="country" autocomplete="country-name" class="input-primary"
+                        formControlName="type">
                         <option>--Select Category--</option>
                         <option>Fire Fighter</option>
                         <option>Paramedic</option>
@@ -80,6 +84,6 @@
         </div>
     </div>
     <div class="mt-6 flex items-end justify-end gap-x-6">
-        <button type="submit" routerLink="/instructors" class="btn-primary">Add</button>
+        <button type="button" class="btn-primary" (click)="onSubmit()" routerLink="/instructors">Add</button>
     </div>
 </form>
