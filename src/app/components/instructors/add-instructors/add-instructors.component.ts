@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add-instructors',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddInstructorsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private fb: FormBuilder) { }
+  instructorForm!: FormGroup
   ngOnInit(): void {
+    this.instructorForm = this.fb.group({
+
+    })
   }
 
 }

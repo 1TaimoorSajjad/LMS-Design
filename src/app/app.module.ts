@@ -23,6 +23,7 @@ import { Course3Component } from './components/courses/course3/course3.component
 import { Course4Component } from './components/courses/course4/course4.component';
 import { Course5Component } from './components/courses/course5/course5.component';
 import { Course6Component } from './components/courses/course6/course6.component';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,9 @@ import { Course6Component } from './components/courses/course6/course6.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
