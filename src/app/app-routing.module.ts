@@ -76,8 +76,13 @@ const routes: Routes = [
     path: 'categories', component: CategoriesListComponent
   },
   {
-    path: 'add-category', component: AddCategoriesComponent
+    path: 'add-category', component: AddCategoriesComponent,
+    
   },
+{
+  path: 'add-category/:id/edit', component: AddCategoriesComponent
+},
+
   {
     path: 'sub-categories', component: SubCategoriesListComponent
   },
