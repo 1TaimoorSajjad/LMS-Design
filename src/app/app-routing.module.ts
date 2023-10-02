@@ -84,6 +84,9 @@ const routes: Routes = [
   {
     path: 'add-sub-category', component: AddSubCategoriesComponent
   },
+  {
+    path: 'add-sub-category/edit/:id', component: AddSubCategoriesComponent
+  },
 
 ];
 
