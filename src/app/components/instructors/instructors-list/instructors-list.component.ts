@@ -22,7 +22,6 @@ export class InstructorsListComponent implements OnInit {
   async getInstructors() {
     const querySnapshot = await getDocs(this.collectionRef)
     querySnapshot.forEach((doc) => {
-      // Include the document ID along with the data
       this.instructors.push({ id: doc.id, data: doc.data() });
     })
     console.log("instructors", this.instructors)
