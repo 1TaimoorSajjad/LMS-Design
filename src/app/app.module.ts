@@ -27,6 +27,7 @@ import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { getStorage } from 'firebase/storage';
 
 
 
@@ -61,6 +62,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
+    
 
 
   ],
