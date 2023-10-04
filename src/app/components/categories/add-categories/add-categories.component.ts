@@ -17,7 +17,7 @@ export class AddCategoriesComponent implements OnInit {
   isSubmit = false;
   selectedFile: File | null = null;
   downloadURL: string | null = null;
-  imagePreview: string | null = null;
+  imagePreview: any | null = null;
 
   constructor(
     private fb: FormBuilder,
@@ -84,7 +84,12 @@ export class AddCategoriesComponent implements OnInit {
     const categoriesDocSnapshot = await getDoc(categoriesDocRef);
     if (categoriesDocSnapshot.exists()) {
       const categoriesData = categoriesDocSnapshot.data();
-      this.categoryForm.patchValue(categoriesData);
+      
+      this.categoryForm.patchValue({
+        title: categoriesData.title,
+        desc: categoriesData.desc,
+        // image: categoriesData.image
+      });
     }
   }
 
@@ -101,13 +106,14 @@ export class AddCategoriesComponent implements OnInit {
     if (this.selectedFile) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        this.imagePreview = e.target?.result as string;
+        this.imagePreview = e.target?.result;
+        console.log('imagePreview', this.imagePreview)
       };
       reader.readAsDataURL(this.selectedFile);
       
     }
 
-    this.uploadFile();
+    // this.uploadFile();
   }
 
   async uploadFile(): Promise<void> {
@@ -115,10 +121,10 @@ export class AddCategoriesComponent implements OnInit {
       console.error('No file selected.');
       return;
     }
-    console.log('before getStorage')
+   debugger
     const storage = getStorage();
     const filePath = `uploads/${this.selectedFile.name}`;
-    console.log('filePath', filePath)
+    // console.log('filePath', filePath)
     const storageRef = ref(storage, filePath);
 
     const uploadTask = uploadBytesResumable(storageRef, this.selectedFile);
@@ -128,7 +134,7 @@ export class AddCategoriesComponent implements OnInit {
 
       if (snapshot.state === 'success') {
         const downloadURL = await getDownloadURL(snapshot.ref);
-        console.log('File uploaded. Download URL:', downloadURL);
+        // console.log('File uploaded. Download URL:', downloadURL);
         this.downloadURL = downloadURL;
       }
     } catch (error) {
