@@ -1,26 +1,12 @@
-<div class="max-w-7xl mx-auto">
-    <div>
-        <div class="font-serif text-4xl mt-12 hidden">
+<form class="flex max-w-full mx-28" [formGroup]="courseForm">
+    <!-- First Screen -->
+    <div class="mx-auto max-w-7xl " *ngIf="!isNext && !isLast">
+        <div class=" font-serif text-4xl mt-12">
             First, let's find out what type of course you're making.
         </div>
-        <div class="font-serif text-4xl mt-12 hidden">
-            How about a working title?
-            <span class="block text-sm mt-4 text-center">It's ok if you can't think of a good title now. You can change
-                it later.
-
-            </span>
-        </div>
-        <div class="font-serif text-4xl mt-12 hidden ">
-            What category best fits the knowledge you'll share?
-
-            <span class="block text-sm mt-4 text-center">If you're not sure about the right category, you can change it
-                later.
-            </span>
-        </div>
-        <!-- First three screens -->
         <div class="max-w-7xl mx-auto mt-11 ">
-            <div class="grid sm:grid-cols-2 gap-8 ">
-                <div class="p-20 shadow-sm ring-1 ring-black ">
+            <div class="grid sm:grid-cols-2 gap-8">
+                <button class="p-20 shadow-sm ring-1 ring-black " (click)="isCourse()">
                     <div class="flex justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
@@ -34,8 +20,8 @@
                     <div class="block text-gray-900 font-normal text-center">Create rich learning experiences with the
                         help of view
                         lectures, quizzes, coding exercises, etc</div>
-                </div>
-                <div class="p-20 shadow-sm ring-1 ring-black ">
+                </button>
+                <button class="p-20 shadow-sm ring-1 ring-black ">
                     <div class="flex justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="w-6 h-6">
@@ -47,18 +33,50 @@
                     <div class="font-bold text-2xl text-center">Practice Test</div>
                     <div class="block text-gray-900 font-normal text-center">Help Students prepare for certification
                         exams by providing practice questions</div>
-                </div>
+                </button>
             </div>
-            <div class="grid sm:grid-cols-1 gap-8 hidden">
+        </div>
+        <div class="mt-6 flex items-end justify-end gap-x-6">
+            <button type="submit" class="btn-primary" (click)="isTitle()">Continue</button>
+        </div>
+    </div>
+    <div class="mx-auto max-w-7xl " *ngIf="isNext || isLast">
+
+        <div class="font-serif text-4xl mt-12 text-center">
+            How about a working title?
+            <span class="block text-sm mt-4 text-center">It's ok if you can't think of a good title now. You can change
+                it later.
+
+            </span>
+        </div>
+        <!-- First three screens -->
+        <div class="max-w-7xl mx-auto mt-11 ">
+
+            <div class="grid sm:grid-cols-1 gap-8 ">
                 <div>
                     <div class="mt-2 col-span-1">
-                        <input type="email" name="email" id="email"
+                        <input type="email" name="email" id="email" formControlName="title"
                             class="block w-full border-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-gray-600 sm:text-sm sm:leading-6"
                             placeholder="e.g. Learn JavaScript in 60 Days">
                     </div>
                 </div>
             </div>
-            <div class="grid sm:grid-cols-1 gap-8 hidden ">
+
+        </div>
+        <div class="mt-6 flex items-end justify-end gap-x-6">
+            <button type="submit" class="btn-primary">Continue</button>
+        </div>
+    </div>
+    <div class="mx-auto max-w-7xl" *ngIf="isLast">
+        <div class="font-serif text-4xl mt-12 ">
+            What category best fits the knowledge you'll share?
+            <span class="block text-sm mt-4 ">If you're not sure about the right category, you can change it
+                later.
+            </span>
+        </div>
+        <!-- First three screens -->
+        <div class="max-w-7xl mt-11 ">
+            <div class="grid sm:grid-cols-1 gap-8">
                 <div>
                     <label id="listbox-label" class="block text-sm font-medium leading-6 text-gray-900">Assigned
                         to</label>
@@ -120,448 +138,9 @@
                 </div>
 
             </div>
-            <div class="grid sm:grid-cols-6 gap-8 hidden">
-                <div class="col-span-1">
-                    <label class="font-bold">Plan your Course</label>
-                    <div class="space-y-6">
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="comments" class="font-medium text-gray-900">Comments</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="candidates" aria-describedby="candidates-description" name="candidates"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="offers" class="font-medium text-gray-900">Offers</label>
-
-                            </div>
-                        </div>
-                    </div>
-                    <label class="font-bold mt-4">Create your content
-                    </label>
-                    <div class="space-y-6">
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="comments" class="font-medium text-gray-900">Comments</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="candidates" aria-describedby="candidates-description" name="candidates"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="offers" class="font-medium text-gray-900">Offers</label>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-5 p-10 shadow-lg rounded-md ">
-                    <div class="text-4xl font-serif">
-                        Intended learners
-                    </div>
-                    <p>
-                        The following descriptions will be publicly visible on your Course Landing Page and will have a
-                        direct impact on your course performance. These descriptions will help learners decide if your
-                        course is right for them.
-                    </p>
-                    <p>
-                        <span class="font-bold block">What will students learn in your course?</span>
-                        You must enter at least 4 learning objectives or outcomes that learners can expect to achieve
-                        after completing your course.
-                    </p>
-
-                    <div class="mt-4">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" name="email" id="email"
-                            class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            placeholder="you@example.com">
-                    </div>
-                    <div class="mt-4">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" name="email" id="email"
-                            class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            placeholder="you@example.com">
-                    </div>
-                    <div class="mt-4">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" name="email" id="email"
-                            class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            placeholder="you@example.com">
-                    </div>
-                    <div class="mt-4">
-                        <button type="button"
-                            class="inline-flex items-center gap-x-2  px-3.5 py-2.5 text-sm font-semibold text-gray-700">
-                            <svg class="-ml-0.5 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            Add more to your response
-                        </button>
-                    </div>
-                    <p>
-                        <span class="font-bold block">What are the requirements or prerequisites for taking your
-                            course?</span>
-                        List the required skills, experience, tools or equipment learners should have prior to taking
-                        your course.
-                        If there are no requirements, use this space as an opportunity to lower the barrier for
-                        beginners.
-                    </p>
-                    <div class="mt-4">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" name="email" id="email"
-                            class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            placeholder="you@example.com">
-                    </div>
-                    <div class="mt-4">
-                        <button type="button"
-                            class="inline-flex items-center gap-x-2  px-3.5 py-2.5 text-sm font-semibold text-gray-700">
-                            <svg class="-ml-0.5 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            Add more to your response
-                        </button>
-                    </div>
-                    <p>
-                        <span class="font-bold block">Who is this course for?</span>
-                        Write a clear description of the intended learners for your course who will find your course
-                        content valuable.
-                        This will help you attract the right learners to your course.
-                    </p>
-                    <div class="mt-4">
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" name="email" id="email"
-                            class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            placeholder="you@example.com">
-                    </div>
-                    <div class="mt-4">
-                        <button type="button"
-                            class="inline-flex items-center gap-x-2  px-3.5 py-2.5 text-sm font-semibold text-gray-700">
-                            <svg class="-ml-0.5 h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            Add more to your response
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="grid sm:grid-cols-6 gap-8 hidden">
-                <div class="col-span-1">
-                    <label class="font-bold">Plan your Course</label>
-                    <div class="space-y-6">
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="comments" class="font-medium text-gray-900">Comments</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="candidates" aria-describedby="candidates-description" name="candidates"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="offers" class="font-medium text-gray-900">Offers</label>
-
-                            </div>
-                        </div>
-                    </div>
-                    <label class="font-bold mt-4">Create your content
-                    </label>
-                    <div class="space-y-6">
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="comments" class="font-medium text-gray-900">Comments</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="candidates" aria-describedby="candidates-description" name="candidates"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="offers" class="font-medium text-gray-900">Offers</label>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-5 p-10 shadow-lg rounded-md ">
-                    <div class="flex justify-between">
-                        <div class="text-4xl font-serif">
-                            Curriculum
-                        </div>
-                        <div>
-                            <button class="btn-primary"> Bulk Uploader</button>
-                        </div>
-                    </div>
-                    <div class="font-normal mt-4">
-                        Start putting together your course by creating sections, lectures and practice (quizzes, coding
-                        exercises and assignments).
-                    </div>
-                    <div class="font-normal">
-                        Start putting together your course by creating sections, lectures and practice activities
-                        (quizzes, coding exercises and assignments). Use your course outline to structure your content
-                        and label your sections and lectures clearly. If you’re intending to offer your course for free,
-                        the total length of video content must be less than 2 hours.
-                    </div>
-
-                    <div class="mt-4 ring-1 ring-black bg-gray-100/40">
-                        <div class="font-medium p-2">
-                            Section 1: <span class="font-normal">Introduction</span>
-                            <div class="ring-1 ring-black m-6 flex justify-between">
-                                <div class="font-medium p-2">
-                                    Lecture 1: <span class="font-normal">Introduction</span>
-                                </div>
-                                <div>
-                                    <button class="btn-primary">+ Content</button>
-                                </div>
-                            </div>
-                            <div class="p-2">
-                                <button class="btn-primary p-2"> + Curriculum item</button>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="mt-2">
-                        <button class="btn-primary p-2">+ Section</button>
-                    </div>
-                </div>
-            </div>
-            <div class="grid sm:grid-cols-6 gap-8 hidden">
-                <div class="col-span-1">
-                    <label class="font-bold">Plan your Course</label>
-                    <div class="space-y-3">
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="comments" class="font-medium text-gray-900">Comments</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="candidates" aria-describedby="candidates-description" name="candidates"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 mb-5 text-sm leading-6">
-                                <label for="offers" class="font-medium text-gray-900">Offers</label>
-
-                            </div>
-                        </div>
-                    </div>
-                    <label class="font-bold mt-9">Create your content
-                    </label>
-                    <div class="space-y-3">
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="comments" aria-describedby="comments-description" name="comments"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="comments" class="font-medium text-gray-900">Comments</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="candidates" aria-describedby="candidates-description" name="candidates"
-                                    type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="candidates" class="font-medium text-gray-900">Candidates</label>
-
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-6 items-center">
-                                <input id="offers" aria-describedby="offers-description" name="offers" type="checkbox"
-                                    class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
-                            </div>
-                            <div class="ml-3 text-sm leading-6">
-                                <label for="offers" class="font-medium text-gray-900">Offers</label>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-span-5 p-10 shadow-lg rounded-md ">
-                    <div class="flex justify-between">
-                        <div class="text-4xl font-serif">
-                            Course landing page
-                        </div>
-                    </div>
-                    <div class="font-normal mt-4">
-                        Your course landing page is crucial to your success on LMS. If it’s done right, it can also
-                        help you gain visibility in search engines like Google. As you complete this section, think
-                        about creating a compelling Course Landing Page that demonstrates why someone would want to
-                        enroll in your course. Learn more about creating your course landing page and course title
-                        standards.
-                    </div>
-                    <div class="mt-2">
-                        <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course title</label>
-                        <div class="mt-2">
-                            <input type="email" name="email" id="email"
-                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                placeholder="you@example.com">
-                        </div>
-                    </div>
-                    <div class="mt-2">
-                        <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course subtitle
-                        </label>
-                        <div class="mt-2">
-                            <input type="email" name="email" id="email"
-                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                placeholder="you@example.com">
-                        </div>
-                    </div>
-                    <div class="mt-2">
-                        <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course description
-                        </label>
-                        <div class="mt-2">
-                            <input type="email" name="email" id="email"
-                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                placeholder="you@example.com">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-4 gap-4">
-                        <div class="col-span-1">
-
-                            <label for="email" class="block text-sm font-bold leading-6 mt-2 text-gray-900">Basic
-                                Info</label>
-                            <div class="">
-                                <input type="email" name="email" id="email"
-                                    class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    placeholder="Language">
-                            </div>
-                        </div>
-                        <div class="col-span-1 mt-8">
-                            <input type="email" name="email" id="email"
-                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                placeholder="Level">
-                        </div>
-                        <div class="col-span-1 mt-8">
-                            <input type="email" name="email" id="email"
-                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                placeholder="Category">
-                        </div>
-                        <div class="mt-8">
-                            <input type="email" name="email" id="email"
-                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                placeholder="Sub-Category">
-                        </div>
-                        <div class=" col-span-1 ">
-                            <input type="email" name="email" id="email"
-                                class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                placeholder="Price">
-                        </div>
-                    </div>
-
-                    <div class="mt-2">
-
-                        <label class="block mb-2 text-sm font-bold text-gray-900 " for="file_input">Upload
-                            Cover Photo</label>
-                        <input class="btn-primary bg-white text-gray-900" id="file_input" type="file">
-
-                    </div>
-                </div>
-
-            </div>
         </div>
-        <div class="mt-6 flex items-end justify-end gap-x-6">
-            <button type="submit" class="btn-primary" routerLink="/add-course/screen1">Continue</button>
+        <div class="mt-14 flex items-end justify-end gap-x-6">
+            <button type="submit" class="btn-primary" routerLink="/add-course/4">Continue</button>
         </div>
     </div>
+</form>

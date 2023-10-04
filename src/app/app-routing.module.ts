@@ -33,29 +33,8 @@ const routes: Routes = [
   {
     path: '', component: CourseListComponent
   },
-  // {
-  //   path: 'add-course/screen1', component: AddCourseComponent
-  // },
-  // {
-  //   path: 'add-course/screen2', component: AddCourseComponent
-  // },
   {
-    path: 'add-course/1', component: Course1Component
-  },
-  {
-    path: 'add-course/2', component: Course2Component
-  },
-  {
-    path: 'add-course/3', component: Course3Component
-  },
-  {
-    path: 'add-course/4', component: Course4Component
-  },
-  {
-    path: 'add-course/5', component: Course5Component
-  },
-  {
-    path: 'add-course/6', component: Course6Component
+    path: 'add-course', component: AddCourseComponent
   },
   {
     path: 'instructors', component: InstructorsListComponent
@@ -77,11 +56,11 @@ const routes: Routes = [
   },
   {
     path: 'add-category', component: AddCategoriesComponent,
-    
+
   },
-{
-  path: 'add-category/:id/edit', component: AddCategoriesComponent
-},
+  {
+    path: 'add-category/:id/edit', component: AddCategoriesComponent
+  },
 
   {
     path: 'sub-categories', component: SubCategoriesListComponent
