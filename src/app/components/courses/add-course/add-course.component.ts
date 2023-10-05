@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Firestore, addDoc, collection } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
@@ -11,7 +12,8 @@ export class AddCourseComponent implements OnInit {
   isCourseType = true
   isTitle = false
   isCategory = false
-  constructor(private fb: FormBuilder) { }
+  collectionRef: any;
+  constructor(private fb: FormBuilder, private firestore: Firestore) { }
 
   ngOnInit() {
     this.courseForm = this.fb.group({
@@ -19,6 +21,7 @@ export class AddCourseComponent implements OnInit {
       title: [''],
       category: ['']
     })
+    this.collectionRef = collection(this.firestore, 'courses')
   }
 
   isNext(nav: any) {
@@ -47,6 +50,13 @@ export class AddCourseComponent implements OnInit {
   onSubmit() {
     const payload = this.courseForm.value
     console.log("payload", payload);
+    try {
+      addDoc(this.collectionRef, payload)
+      console.log("Document Successfully added in the DB")
+    } catch {
+      console.log("Error Pushing data to the DB")
+    }
+
 
   }
 

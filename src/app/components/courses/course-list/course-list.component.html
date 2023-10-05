@@ -72,35 +72,26 @@
                 </div>
             </div>
             <!-- Course List -->
-            <div class="bg-white shadow sm:rounded-lg m-6 px-6 hover:bg-gray-100">
-                <div class="px-4 py-5 sm:p-6 relative">
-                    <h3 class="text-medium text-2xl font-semibold leading-6 text-gray-900">JavaScript</h3>
-                    <div class="mt-2 sm:flex sm:items-start sm:justify-between">
-                        <div class="max-w-xl text-sm text-gray-500">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptatibus corrupti
-                                atque repudiandae nam.</p>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-500">
-                            <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 45%"></div>
-                        </div>
-                        <div
-                            class="absolute top-0 left-0 w-full h-full bg-white opacity-0 hover:opacity-90 transition-opacity duration-300 flex items-center justify-center">
-                            <button class="text-gray-600 font-semibold hover:underline">Edit/Manage course</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg-white shadow sm:rounded-lg m-6 px-6">
-                <div class="px-4 py-5 sm:p-6">
-                    <h3 class="text-medium text-2xl font-semibold leading-6 text-gray-900">HTML & CSS</h3>
-                    <div class="mt-2 sm:flex sm:items-start sm:justify-between">
-                        <div class="max-w-xl text-sm text-gray-500">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptatibus
-                                corrupti
-                                atque repudiandae nam.</p>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-500">
-                            <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 60%"></div>
+            <div class="" *ngFor="let item of courses">
+                <div class="bg-white shadow sm:rounded-lg m-6 hover:bg-gray-100">
+                    <div class="px-4 py-5 sm:p-6 relative">
+                        <h3 class="text-medium text-2xl font-semibold leading-6 text-gray-900">{{item.data.title}}</h3>
+                        <div class="mt-2 sm:flex sm:items-start sm:justify-between">
+                            <div class="max-w-xl text-sm text-gray-500">
+                                <span>
+                                    {{item.data.category}}
+                                </span>
+                                <span>
+                                    {{item.data.courseType}}
+                                </span>
+                            </div>
+                            <div class="w-64 bg-gray-200 rounded-full h-2.5 dark:bg-gray-500">
+                                <div class="bg-indigo-600 h-2.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <div
+                                class="absolute top-0 left-0 w-full h-full bg-white opacity-0 hover:opacity-90 transition-opacity duration-300 flex items-center justify-center">
+                                <button class="text-gray-600 font-semibold hover:underline">Edit/Manage course</button>
+                            </div>
                         </div>
                     </div>
                 </div>
