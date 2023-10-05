@@ -42,7 +42,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'courses/:id:/manage', component: ManageCourseComponent
+    path: 'courses/:id/manage', component: ManageCourseComponent
   },
 
 

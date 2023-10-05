@@ -35,7 +35,7 @@ export class CourseListComponent implements OnInit {
 
   onEdit(documentId: any) {
     console.log("this.courses.id", documentId)
-    this.router.navigateByUrl('/add-course/edit/' + documentId)
+    this.router.navigateByUrl(`/courses/${documentId}/manage`)
   }
 
 }
