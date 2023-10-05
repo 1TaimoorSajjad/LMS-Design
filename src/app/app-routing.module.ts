@@ -18,6 +18,7 @@ import { Course3Component } from './components/courses/course3/course3.component
 import { Course4Component } from './components/courses/course4/course4.component';
 import { Course5Component } from './components/courses/course5/course5.component';
 import { Course6Component } from './components/courses/course6/course6.component';
+import { ManageCourseComponent } from './components/courses/manage-course/manage-course.component';
 
 
 const routes: Routes = [
@@ -27,37 +28,35 @@ const routes: Routes = [
   {
     path: 'signin', component: SigninComponent
   },
+
+  {
+    path: '', component: CourseListComponent
+  },
+
   {
     path: 'courses', component: CourseListComponent
   },
 
   {
-    path: 'courses4', component: Course6Component
+    path: 'courses/add', component: AddCourseComponent
   },
 
   {
-    path: '', component: CourseListComponent
+    path: 'courses/:id:/manage', component: ManageCourseComponent
   },
-  {
-    path: 'add-course', component: AddCourseComponent
-  },
-  {
-    path: 'add-course', component: AddCourseComponent
-  },
-  {
-    path: 'add-course/edit/:id', component: AddCourseComponent
-  },
+
+
   {
     path: 'instructors', component: InstructorsListComponent
   },
   {
-    path: 'add-instructor', component: AddInstructorsComponent
+    path: 'instructors/add', component: AddInstructorsComponent
   },
   {
-    path: 'instructors/edit/:id', component: AddInstructorsComponent
+    path: 'instructors/:id/edit', component: AddInstructorsComponent
   },
   {
-    path: 'instructor/documents', component: DocumentsComponent
+    path: 'instructors/:id/documents', component: DocumentsComponent
   },
   {
     path: 'kpi', component: KpiComponent
@@ -66,21 +65,21 @@ const routes: Routes = [
     path: 'categories', component: CategoriesListComponent
   },
   {
-    path: 'add-category', component: AddCategoriesComponent,
+    path: 'categories/add', component: AddCategoriesComponent,
 
   },
   {
-    path: 'add-category/:id/edit', component: AddCategoriesComponent
+    path: 'categories/:id/edit', component: AddCategoriesComponent
   },
 
   {
     path: 'sub-categories', component: SubCategoriesListComponent
   },
   {
-    path: 'add-sub-category', component: AddSubCategoriesComponent
+    path: 'sub-categories/add', component: AddSubCategoriesComponent
   },
   {
-    path: 'add-sub-category/edit/:id', component: AddSubCategoriesComponent
+    path: 'sub-categories/:id/edit', component: AddSubCategoriesComponent
   },
 
 ];
