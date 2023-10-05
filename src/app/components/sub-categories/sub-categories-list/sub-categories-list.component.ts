@@ -26,7 +26,7 @@ export class SubCategoriesListComponent implements OnInit {
   }
 
   edit(subCategoryId: string) {
-    this.router.navigate(['/add-sub-category/edit/' + subCategoryId])
+    this.router.navigateByUrl(`/sub-categories/${subCategoryId}/edit`)
 
   }
 

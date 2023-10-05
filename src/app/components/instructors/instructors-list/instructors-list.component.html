@@ -10,7 +10,7 @@
 
                     </div>
                     <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-                        <button type="button" routerLink="/add-instructor" class="btn-primary">Add
+                        <button type="button" routerLink="/instructors/add" class="btn-primary">Add
                             Instructor</button>
                     </div>
                 </div>
@@ -63,11 +63,10 @@
                                         </td>
                                         <td
                                             class="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                                            <button class="btn-primary" type="button" (click)="edit(item.id)"
-                                                routerLink="/instructors">
+                                            <button class="btn-primary" type="button" (click)="edit(item.id)">
                                                 Edit
                                             </button>
-                                            | <a href="instructor/documents"
+                                            | <a href="instructors/{{item.id}}/documents"
                                                 class="text-indigo-600 hover:text-indigo-900">Doc<span class="sr-only">,
                                                     Lindsay Walton</span></a>
                                         </td>

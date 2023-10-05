@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Firestore, collection, addDoc, doc, setDoc, getDoc } from '@angular/fire/firestore';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-instructors',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./add-instructors.component.css']
 })
 export class AddInstructorsComponent implements OnInit {
-  constructor(private fb: FormBuilder, private firestore: Firestore, private router: ActivatedRoute) { }
+  constructor(private fb: FormBuilder, private firestore: Firestore, private route: ActivatedRoute, private router: Router) { }
   collectionRef: any
   instructorForm!: FormGroup;
   documentId: any
@@ -36,13 +36,14 @@ export class AddInstructorsComponent implements OnInit {
       } else {
         await addDoc(this.collectionRef, payload);
       }
+      this.router.navigateByUrl(`/instructors`)
     } catch (error) {
       console.error('Error adding/updating document: ', error);
     }
   }
 
   getInstructorId() {
-    this.router.params.subscribe(async (params) => {
+    this.route.params.subscribe(async (params) => {
       const userId = params['id'];
       if (userId) {
         this.documentId = userId;

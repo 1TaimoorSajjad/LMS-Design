@@ -28,7 +28,7 @@ export class InstructorsListComponent implements OnInit {
   }
 
   edit(instructorId: string) {
-    this.router.navigate(['/instructors/edit/' + instructorId])
+    this.router.navigateByUrl(`/instructors/${instructorId}/edit`)
 
   }
 }
