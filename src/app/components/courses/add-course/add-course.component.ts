@@ -8,26 +8,47 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AddCourseComponent implements OnInit {
   courseForm!: FormGroup
-  isNext = false
-  isLast = false
+  isCourseType = true
+  isTitle = false
+  isCategory = false
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.courseForm = this.fb.group({
       courseType: [''],
-
       title: [''],
       category: ['']
     })
   }
 
-  isCourse() {
-    this.courseForm.value.courseType = "course"
-    console.log("CourseForm", this.courseForm.value)
-    this.isNext = true
+  isNext(nav: any) {
+    if (nav === 'course') {
+      this.isCourseType = false
+      this.isTitle = true
+    }
+    else if (nav === 'title') {
+      this.isTitle = false
+      this.isCategory = true
+    }
   }
-  isTitle() {
-    this.isLast = true
+  getCourseType(selectedCourse: string): any {
+    if (this.courseForm) {
+      const test = this.courseForm.get('courseType')
+      if (test) {
+        test.setValue(selectedCourse);
+      }
+
+    } else (
+      console.log('Error in IF')
+
+    )
   }
+
+  onSubmit() {
+    const payload = this.courseForm.value
+    console.log("payload", payload);
+
+  }
+
 
 }
