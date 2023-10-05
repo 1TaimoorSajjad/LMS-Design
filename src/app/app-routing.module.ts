@@ -12,12 +12,9 @@ import { AddCategoriesComponent } from './components/categories/add-categories/a
 import { SubCategoriesListComponent } from './components/sub-categories/sub-categories-list/sub-categories-list.component';
 import { AddSubCategoriesComponent } from './components/sub-categories/add-sub-categories/add-sub-categories.component';
 import { DocumentsComponent } from './components/instructors/documents/documents.component';
-import { Course1Component } from './components/courses/course1/course1.component';
-import { Course2Component } from './components/courses/course2/course2.component';
-import { Course3Component } from './components/courses/course3/course3.component';
 import { Course4Component } from './components/courses/course4/course4.component';
 import { Course5Component } from './components/courses/course5/course5.component';
-import { Course6Component } from './components/courses/course6/course6.component';
+
 import { ManageCourseComponent } from './components/courses/manage-course/manage-course.component';
 
 
