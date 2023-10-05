@@ -37,6 +37,12 @@ const routes: Routes = [
     path: 'add-course', component: AddCourseComponent
   },
   {
+    path: 'add-course', component: AddCourseComponent
+  },
+  {
+    path: 'add-course/edit/:id', component: AddCourseComponent
+  },
+  {
     path: 'instructors', component: InstructorsListComponent
   },
   {

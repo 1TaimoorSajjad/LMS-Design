@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Firestore, collection, getDoc, getDocs } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-list',
@@ -9,7 +10,7 @@ import { Firestore, collection, getDoc, getDocs } from '@angular/fire/firestore'
 export class CourseListComponent implements OnInit {
   collectionRef: any;
   courses: any;
-  constructor(private firestore: Firestore) { }
+  constructor(private firestore: Firestore, private router: Router) { }
 
   ngOnInit(): void {
     this.collectionRef = collection(this.firestore, 'courses')
@@ -30,6 +31,11 @@ export class CourseListComponent implements OnInit {
       console.log('Error Fetching data from the db ')
     }
 
+  }
+
+  onEdit(documentId: any) {
+    console.log("this.courses.id", documentId)
+    this.router.navigateByUrl('/add-course/edit/' + documentId)
   }
 
 }
