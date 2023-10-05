@@ -1,5 +1,5 @@
 <div class="flex max-w-full mx-28">
-    <div>
+    <form [formGroup]="manageCourseForm" (ngSubmit)="onSubmit()">
         <!-- First three screens -->
         <div class="max-w-7xl mx-auto mt-11 ">
 
@@ -61,27 +61,50 @@
                     <div class="mt-2">
                         <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course title</label>
                         <div class="mt-2">
-                            <input type="email" name="email" id="email"
+                            <input type="text" name="title" id="title" formControlName="title"
                                 class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 placeholder="you@example.com">
+
+                                <div *ngIf="form.title.errors && isSubmit">
+                                    <div *ngIf="form.title.errors.required" class="">
+                                        <p class="mt-2 text-xs text-red-500">
+                                            Course title is required
+                                        </p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <div class="mt-2">
                         <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course subtitle
                         </label>
                         <div class="mt-2">
-                            <input type="email" name="email" id="email"
+                            <input type="text" name="subTitle" id="subTitle" formControlName="subTitle"
                                 class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 placeholder="you@example.com">
+                                <div *ngIf="form.subTitle.errors && isSubmit">
+                                    <div *ngIf="form.subTitle.errors.required" class="">
+                                        <p class="mt-2 text-xs text-red-500">
+                                            Course sub title is required
+                                        </p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <div class="mt-2">
                         <label for="email" class="block text-sm font-bold leading-6 text-gray-900">Course description
                         </label>
                         <div class="mt-2">
-                            <input type="email" name="email" id="email"
+                            <input type="text" name="desc" id="desc" formControlName="desc"
                                 class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 placeholder="you@example.com">
+
+                                <div *ngIf="form.desc.errors && isSubmit">
+                                    <div *ngIf="form.desc.errors.required" class="">
+                                        <p class="mt-2 text-xs text-red-500">
+                                            Course description is required
+                                        </p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                     <div class="grid grid-cols-4 gap-4">
@@ -90,30 +113,69 @@
                             <label for="email" class="block text-sm font-bold leading-6 mt-2 text-gray-900">Basic
                                 Info</label>
                             <div class="">
-                                <input type="email" name="email" id="email"
+                                <input type="text" name="language" id="language" formControlName="language"
                                     class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     placeholder="Language">
+                                    <div *ngIf="form.language.errors && isSubmit">
+                                        <div *ngIf="form.language.errors.required" class="">
+                                            <p class="mt-2 text-xs text-red-500">
+                                                Language is required
+                                            </p>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                         <div class="col-span-1 mt-8">
-                            <input type="email" name="email" id="email"
+                            <input type="text" name="level" id="level" formControlName="level"
                                 class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 placeholder="Level">
+                                <div *ngIf="form.level.errors && isSubmit">
+                                    <div *ngIf="form.level.errors.required" class="">
+                                        <p class="mt-2 text-xs text-red-500">
+                                             Level is required
+                                        </p>
+                                    </div>
+                                </div>
                         </div>
                         <div class="col-span-1 mt-8">
-                            <input type="email" name="email" id="email"
+                            <input type="text" name="category" id="category" formControlName="category"
                                 class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 placeholder="Category">
+
+                                <div *ngIf="form.category.errors && isSubmit">
+                                    <div *ngIf="form.category.errors.required" class="">
+                                        <p class="mt-2 text-xs text-red-500">
+                                            Category is required
+                                        </p>
+                                    </div>
+                                </div>
+
+
                         </div>
                         <div class="mt-8">
-                            <input type="email" name="email" id="email"
+                            <input type="text" name="subCategory" id="subCategory" formControlName="subCategory"
                                 class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 placeholder="Sub-Category">
+                                <div *ngIf="form.subCategory.errors && isSubmit">
+                                    <div *ngIf="form.subCategory.errors.required" class="">
+                                        <p class="mt-2 text-xs text-red-500">
+                                            Sub Category is required
+                                        </p>
+                                    </div>
+                                </div>
                         </div>
                         <div class=" col-span-1 ">
-                            <input type="email" name="email" id="email"
+                            <input type="text" name="price" id="price" formControlName="price"
                                 class="block w-full border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-black placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 placeholder="Price">
+
+                                <div *ngIf="form.price.errors && isSubmit">
+                                    <div *ngIf="form.price.errors.required" class="">
+                                        <p class="mt-2 text-xs text-red-500">
+                                            Price is required
+                                        </p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
 
@@ -129,6 +191,7 @@
             </div>
         </div>
         <div class="mt-6 flex items-end justify-end gap-x-6">
-            <button type="submit" class="btn-primary" routerLink="/courses">Continue</button>
+            <button type="submit" class="btn-primary">Save</button>
         </div>
-    </div>
+    </form>
+</div>
