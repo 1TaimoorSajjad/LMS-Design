@@ -28,6 +28,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { getStorage } from 'firebase/storage';
+import { ManageCourseComponent } from './components/courses/manage-course/manage-course.component';
 
 
 
@@ -54,6 +55,7 @@ import { getStorage } from 'firebase/storage';
     Course4Component,
     Course5Component,
     Course6Component,
+    ManageCourseComponent,
 
   ],
   imports: [

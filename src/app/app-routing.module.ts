@@ -30,6 +30,11 @@ const routes: Routes = [
   {
     path: 'courses', component: CourseListComponent
   },
+
+  {
+    path: 'courses4', component: Course6Component
+  },
+
   {
     path: '', component: CourseListComponent
   },
